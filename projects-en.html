@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>My Projects</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="nav-en"></div>
+    <div id="nav-en"></div>
 
+    <h1 class="center">My Projects</h1>
 
-<h1>My Projects</h1>
+    <p>Nothing here yet… but it won't be long 😎</p>
+    <p>Soon here will be my games, websites and other stuff.</p>
 
-<p>Nothing here yet… but it won't be long 😎</p>
-<p>Soon here will be my games, websites and other stuff.</p>
-
-</body>
-
-<div id="footer-en"></div>
+    <div id="footer-en"></div>
 
     <script>
         fetch('nav-en.html')
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
-                document.getElementById('nav-en').innerHTML = data;
+                const nav = document.getElementById('nav-en');
+                if (nav) nav.innerHTML = data;
             })
             .catch(error => console.error('Error loading nav:', error));
 
         fetch('footer-en.html')
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
-                document.getElementById('footer-en').innerHTML = data;
+                const footer = document.getElementById('footer-en');
+                if (footer) footer.innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
     </script>
