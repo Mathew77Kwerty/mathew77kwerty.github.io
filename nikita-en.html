@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>About my brother</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,32 +12,28 @@
 
     <h1 class="center">Information about my brother</h1>
 
-   
     <p>He is also currently learning web development and game creation.</p>
-    <p>He loves throwing meatballs out the window😂</p>
+    <p>He loves throwing meatballs out the window 😂</p>
     <p>His projects will be showcased here.</p>
-
 
     <img src="images/Cotleta.jpg" alt="Meatball">
 
-</body>
-
-<div id="footer-en"></div>
+    <div id="footer-en"></div>
 
     <script>
         fetch('nav-en.html')
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
-                document.getElementById('nav-en').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading nav:', error));
+                const nav = document.getElementById('nav-en');
+                if (nav) nav.innerHTML = data;
+            });
 
         fetch('footer-en.html')
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
-                document.getElementById('footer-en').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
+                const footer = document.getElementById('footer-en');
+                if (footer) footer.innerHTML = data;
+            });
     </script>
 
 </body>
