@@ -12,32 +12,26 @@
 
     <h1 class="center">Информация о моем брате</h1>
 
-   
     <p>Он тоже сейчас изучает сайты, создание игр.</p>
-    <p>Он любит кидать котлеты в окно😂</p>
+    <p>Он любит кидать котлеты в окно 😂</p>
     <p>Тут будут его проекты.</p>
-
 
     <img src="images/Cotleta.jpg" alt="Котлета">
 
-</body>
-
-  <div id="footer"></div>
+    <div id="footer"></div>
 
     <script>
         fetch('nav.html')
-            .then(response => response.text())
+            .then(res => res.text())
             .then(data => {
                 document.getElementById('nav').innerHTML = data;
-            })
-            .catch(error => console.error('Ошибка загрузки nav:', error));
+            });
 
         fetch('footer.html')
-            .then(response => response.text())
+            .then(res => res.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Ошибка загрузки footer:', error));
+            });
     </script>
 
 </body>
