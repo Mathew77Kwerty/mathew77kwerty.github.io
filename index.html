@@ -18,22 +18,22 @@
 
     <img src="images/programmer.jpg" alt="Программист">
 
-  <div id="footer"></div>
+    <div id="footer"></div>
 
     <script>
         fetch('nav.html')
-            .then(response => response.text())
+            .then(res => res.text())
             .then(data => {
                 document.getElementById('nav').innerHTML = data;
             })
-            .catch(error => console.error('Ошибка загрузки nav:', error));
+            .catch(err => console.error('Ошибка nav:', err));
 
         fetch('footer.html')
-            .then(response => response.text())
+            .then(res => res.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
             })
-            .catch(error => console.error('Ошибка загрузки footer:', error));
+            .catch(err => console.error('Ошибка footer:', err));
     </script>
 
 </body>
