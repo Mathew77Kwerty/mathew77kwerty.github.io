@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Контакты</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,34 +10,29 @@
 
     <div id="nav"></div>
 
-    <h1 class="center">Мои Контакты</h1>
+    <h1 class="center">Мои контакты</h1>
 
-   
     <p>Почта: matm19201@gmail.com</p>
     <p>Гитхаб: <a href="https://github.com/mathew77kwerty" target="_blank">github.com/mathew77kwerty</a></p>
     <p>Телефон: +998 123 456 7890</p>
 
-
     <img src="images/programmer.jpg" alt="Программист">
 
-</body>
-
-<div id="footer"></div>
+    <div id="footer"></div>
 
     <script>
         fetch('nav.html')
-            .then(response => response.text())
+            .then(res => res.text())
             .then(data => {
                 document.getElementById('nav').innerHTML = data;
-            })
-            .catch(error => console.error('Ошибка загрузки nav:', error));
+            });
 
         fetch('footer.html')
-            .then(response => response.text())
+            .then(res => res.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Ошибка загрузки footer:', error));
+            });
     </script>
+
 </body>
 </html>
