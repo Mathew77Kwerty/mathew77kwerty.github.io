@@ -9,14 +9,7 @@
 
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="aboutme.html">About me</a>
-        <a href="projects.html">Projects</a>
-        <a href="nikita.html">About my brother</a>
-        <a href="coming.html">Soon...</a>
-        <a href="index.html">RU</a>
-    </nav>
+   <div id="nav-en"></div>
 
     <h1 class="center">Welcome to my website!</h1>
 
@@ -30,30 +23,23 @@
 
 </body>
 
-<footer class="footer">
-    <div class="footer-container">
+<div id="footer-en"></div>
 
-        <div class="footer-section">
-            <h3>Matvey</h3>
-            <p>Creating simple and clean websites.</p>
-        </div>
+    <script>
+        fetch('nav-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-en').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading nav:', error));
 
-        <div class="footer-section">
-            <h4>Links</h4>
-            <a href="index-en.html">Home</a>
-            <a href="aboutme-en.html">About</a>
-            <a href="contacts-en.html">Contact</a>
-        </div>
+        fetch('footer-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-en').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 
-        <div class="footer-section">
-            <h4>Contact</h4>
-            <a href="https://github.com/mathew77kwerty" target="_blank">GitHub</a>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Matvey | Made with ❤️</p>
-    </div>
-
+</body>
 </html>
