@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>About me</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,22 +18,22 @@
 
     <img src="images/Sites.jpg" alt="Websites">
 
-</body>
-
-<div id="footer-en"></div>
+    <div id="footer-en"></div>
 
     <script>
         fetch('nav-en.html')
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
-                document.getElementById('nav-en').innerHTML = data;
+                const nav = document.getElementById('nav-en');
+                if (nav) nav.innerHTML = data;
             })
             .catch(error => console.error('Error loading nav:', error));
 
         fetch('footer-en.html')
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
-                document.getElementById('footer-en').innerHTML = data;
+                const footer = document.getElementById('footer-en');
+                if (footer) footer.innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
     </script>
